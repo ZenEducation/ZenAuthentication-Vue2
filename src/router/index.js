@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Form from "../components/Form.vue";
-import Form_details from "../components/Form_details.vue";
+import SignIn from "../components/SignIn.vue";
+import Profile from "../components/Profile.vue";
+import Registration from "../components/Registration.vue";
 import { enableMapSet } from "immer";
 
 enableMapSet();
@@ -11,17 +12,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: Form,
+      component: Registration,
+    },
+    {
+      path: "/sign-in",
+      name: "sign-in",
+      component: SignIn,
+    },
+    {
+      path: "/profile",
+      name: "profile",
+      component: Profile,
     },
     {
       path: "/about",
       name: "about",
       component: () => import("../views/AboutView.vue"),
-    },
-    {
-      path: "/form-details",
-      name: "form-details",
-      component: Form_details,
     },
   ],
 });
